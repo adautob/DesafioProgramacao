@@ -59,12 +59,9 @@ public class VerificaSenha {
 	 */
 	private static boolean temDigito(String senha) {
 		boolean r = false;
-		String digitos = "0123456789";
 		for (int i = 0; i < senha.length(); i++) {
-			for (int j = 0; j < digitos.length(); j++) {
-				if (senha.charAt(i) == digitos.charAt(j))
-					r = true;
-			}
+			if (Character.isDigit(senha.charAt(i)))
+				r = true;
 		}
 		return r;
 	}
