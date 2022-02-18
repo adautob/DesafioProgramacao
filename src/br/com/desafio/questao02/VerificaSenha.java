@@ -22,7 +22,11 @@ public class VerificaSenha {
 
 		senha = scanner.next();
 
-		verificaTamanho(senha);
+		if (qtosCarateresFaltam(senha) != 0) {
+			System.out.println("\nSua senha é muito curta, tem apenas " + senha.length() + " caracteres");
+			System.out.println("Digite mais " + qtosCarateresFaltam(senha) + " caracteres");
+		} else
+			System.out.println("\nTamanho da senha ok");
 
 		if (!temDigito(senha))
 			System.out.println("\nA senha deve conter pelo menos dígito!");
@@ -39,21 +43,16 @@ public class VerificaSenha {
 		scanner.close();
 	}
 
-	/**
-	 * Método que verifica se a senha tem o tamanho mímo de 6 caracteres e exibe mensagem ao usuário
-	 * @param senha
-	 */
-	private static void verificaTamanho(String senha) {
-		if (senha.length() < 6) {
-			System.out.println("\nSua senha é muito curta, tem apenas " + senha.length() + " caracteres");
-			System.out.println("Digite mais " + (6 - senha.length()) + " caracteres");
-		} else
-			System.out.println("\nTamanho da senha ok");
+	protected static int qtosCarateresFaltam(String senha) {
+		if (senha.length() < 6)
+			return (6 - senha.length());
+		else
+			return 0;
 	}
 
-	
 	/**
 	 * Método que retorna True se a senha contém pelo menos um dígito
+	 * 
 	 * @param senha
 	 * @return
 	 */
@@ -68,6 +67,7 @@ public class VerificaSenha {
 
 	/**
 	 * Método que retorna True se a senha contém pelo menos uma letra maiúscula
+	 * 
 	 * @param senha
 	 * @return
 	 */
@@ -80,9 +80,9 @@ public class VerificaSenha {
 		return r;
 	}
 
-	
 	/**
 	 * Método que retorna True se a senha contém pelo menos uma letra minúscula
+	 * 
 	 * @param senha
 	 * @return
 	 */
@@ -95,9 +95,9 @@ public class VerificaSenha {
 		return r;
 	}
 
-	
 	/**
 	 * Método que retorna True se a senha contém pelo menos um caracter especial
+	 * 
 	 * @param senha
 	 * @return
 	 */

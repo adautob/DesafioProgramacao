@@ -9,11 +9,11 @@ public class Anagrama {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("\nDigite uma palavra: ");
-		procurarSubString(scanner.next());
+		System.out.println("Pares de substrings que são anagramas: "+qtdeParesAnagramas(scanner.next()));
 		scanner.close();
 	}
 
-	static void procurarSubString(String s) {
+	static int qtdeParesAnagramas(String s) {
 		HashMap<String, Integer> map = new HashMap<>();
 
 		for (int i = 0; i < s.length(); i++) {
@@ -27,11 +27,11 @@ public class Anagrama {
 					map.put(val, 1);
 			}
 		}
-		int qtdeParesAnagramas = 0;
+		int qtde = 0;
 		for (String key : map.keySet()) {
 			int n = map.get(key);
-			qtdeParesAnagramas += (n * (n - 1)) / 2;
+			qtde += (n * (n - 1)) / 2;
 		}
-		System.out.println("Pares de substrings que são anagramas: "+qtdeParesAnagramas);
+		return qtde;
 	}
 }
