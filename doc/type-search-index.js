@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"br.com.desafio.questao03","l":"Anagrama"},{"p":"br.com.desafio.questao03","l":"AnagramaTest"},{"p":"br.com.desafio.questao01","l":"Escada"},{"p":"br.com.desafio.questao01","l":"EscadaTest"},{"p":"br.com.desafio.questao02","l":"VerificaSenha"},{"p":"br.com.desafio.questao02","l":"VerificaSenhaTest"}]
